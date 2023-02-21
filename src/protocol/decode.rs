@@ -119,8 +119,8 @@ where
             Some(ch) => {
                 match ch {
                     b'e' => break,
-                    _ => {
-                        let item = decode(bytes)?;
+                    ch => {
+                        let item = handler(bytes, ch)?;
                         l.push(item);
                     }
                 }
@@ -136,6 +136,7 @@ where
     T: Iterator<Item = u8>
 {
     let mut d = BTreeMap::new();
+    let mut last_key = None;
 
     loop {
         match bytes.next() {
@@ -144,13 +145,22 @@ where
                 match ch {
                     b'e' => break,
                     _ => {
-                        let key = decode_binarystring(bytes, ch)?;
-                        let value = decode(bytes)?;
-                        
-                        match key {
-                            Type::ByteString(key) => d.insert(key, value),
-                            _ => return Err(DecodeError::InvalidDictionaryKey),
-                        };
+                        match last_key {
+                            None => {
+                                let key = decode_binarystring(bytes, ch)?;
+                                match key {
+                                    Type::ByteString(key) => {
+                                        last_key = Some(key);
+                                    },
+                                    _ => return Err(DecodeError::InvalidDictionaryKey),
+                                };
+                            },
+                            Some(key) => {
+                                let value = handler(bytes, ch)?;
+                                d.insert(key, value);
+                                last_key = None;
+                            },
+                        }
                     }
                 }
             }
