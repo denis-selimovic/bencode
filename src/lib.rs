@@ -1,3 +1,2 @@
-pub mod decoder;
-pub mod encoder;
+pub mod protocol;
 pub mod types;
