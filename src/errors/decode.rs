@@ -14,6 +14,8 @@ pub enum DecodeError {
     InvalidInteger,
     #[error("negative zero is not allowed")]
     NegativeZeroInteger,
+    #[error("integer with leading zeros is not allowed")]
+    IntegerWithLeadingZeros,
     #[error("invalid byte string length")]
     InvalidByteStringLength,
     #[error("invalid list")]
@@ -22,4 +24,6 @@ pub enum DecodeError {
     InvalidDictionary,
     #[error("invalid type for dictionary key")]
     InvalidDictionaryKey,
+    #[error("invalid byte sequence")]
+    InvalidByteSequence,
 }
