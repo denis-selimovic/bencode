@@ -4,6 +4,12 @@ Rust implementation for bencode encoding. Bencode is the encoding used by the pe
 
 Bencoding is simple and (because numbers are encoded as text in decimal notation) is unaffected by endianness, which is important for a cross-platform application like BitTorrent. It is also fairly flexible, as long as applications ignore unexpected dictionary keys, so that new ones can be added without creating incompatibilities.
 
+### Installation
+
+You can install `bencode_encoder` crate in your Rust project by using:
+> `$ cargo add bencode-encoder`
+
+
 ### Data types
 
 Bencode specification supports 4 data types:
