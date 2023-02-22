@@ -1,6 +1,6 @@
 use std::collections::BTreeMap;
 
-use crate::errors::decode::DecodeError;
+use crate::errors::DecodeError;
 use crate::types::Type;
 
 

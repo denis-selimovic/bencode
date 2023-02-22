@@ -1,2 +1,5 @@
-pub mod decode;
-pub mod serialize;
+mod decode;
+mod serialize;
+
+pub use decode::DecodeError;
+pub use serialize::SerializationError;

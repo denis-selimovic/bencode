@@ -4,7 +4,7 @@ use std::io::Write;
 use std::path::Path;
 use serde::{Deserialize, Serialize};
 
-use crate::errors::serialize::SerializationError;
+use crate::errors::SerializationError;
 
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
