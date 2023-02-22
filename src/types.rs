@@ -17,7 +17,7 @@ pub enum Type {
 }
 
 impl Type {
-    pub fn from_json(&self, s: &String) -> Result<Type, DeserializationError> {
+    pub fn from_json(s: &String) -> Result<Type, DeserializationError> {
         match serde_json::from_str::<Type>(s) {
             Err(_) => Err(DeserializationError::JsonDeserializationError),
             Ok(t) => Ok(t),
@@ -31,13 +31,13 @@ impl Type {
         }
     }
 
-    pub fn load_from_json<P>(&self, path: P) -> Result<Type, DeserializationError>
+    pub fn load_from_json<P>(path: P) -> Result<Type, DeserializationError>
     where
         P: AsRef<Path>
     {
         match read_to_string(path) {
             Err(_) => return Err(DeserializationError::FileError),
-            Ok(json_str) => self.from_json(&json_str), 
+            Ok(json_str) => Type::from_json(&json_str), 
         }
     }
 
