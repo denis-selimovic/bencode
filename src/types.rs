@@ -8,6 +8,7 @@ use crate::errors::serialize::SerializationError;
 
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(untagged)]
 pub enum Type {
     Integer(i64),
     ByteString(String),
