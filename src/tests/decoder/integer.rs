@@ -1,6 +1,5 @@
-use bencode::protocol::{decode, encode};
-use bencode::types::Type;
-
+use crate::protocol::{decode, encode};
+use crate::Type;
 
 #[test]
 fn test_decode_zero() {

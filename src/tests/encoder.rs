@@ -1,7 +1,7 @@
 use std::collections::BTreeMap;
 
-use bencode::protocol::encode;
-use bencode::types::Type;
+use crate::protocol::encode;
+use crate::Type;
 
 
 #[test]
