@@ -12,7 +12,7 @@ fn main() {
         Ok(t) => {
             match t.save_to_json(output_file) {
                 Err(err) => println!("{}", err.to_string()),
-                Ok(_) => println!("Decoded bencode sasved to .json file"),
+                Ok(_) => println!("Decoded bencode saved to .json file"),
             }
         },
     }
