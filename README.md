@@ -16,7 +16,7 @@ Bencode specification supports 4 data types:
 ### Example usage (decoding from .torrent file and storing as .json file)
 
 ```rust
-use bencode::Decoder;
+use bencode_encoder::Decoder;
 
 
 fn main() {
@@ -40,8 +40,7 @@ fn main() {
 ### Example usage (reading from .json file and encoding to .torrent file)
 
 ```rust
-use bencode::Encoder;
-use bencode::Type;
+use bencode_encoder::{Encoder, Type};
 
 
 fn main() {
