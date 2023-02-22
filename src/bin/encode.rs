@@ -1,5 +1,4 @@
-use bencode::Encoder;
-use bencode::Type;
+use bencode_encoder::{Encoder, Type};
 
 
 fn main() {

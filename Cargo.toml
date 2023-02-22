@@ -1,5 +1,5 @@
 [package]
-name = "bencode"
+name = "bencode-encoder"
 description = "Bencode encoder for Rust"
 homepage = "https://github.com/denis-selimovic/bencode"
 repository = "https://github.com/denis-selimovic/bencode"

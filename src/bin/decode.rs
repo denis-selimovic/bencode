@@ -1,4 +1,4 @@
-use bencode::Decoder;
+use bencode_encoder::Decoder;
 
 
 fn main() {
