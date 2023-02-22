@@ -1,7 +1,13 @@
 [package]
 name = "bencode"
+description = "Bencode encoder for Rust"
+homepage = "https://github.com/denis-selimovic/bencode"
+repository = "https://github.com/denis-selimovic/bencode"
+readme = "README.md"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+keywords = ["encoder", "torrent", "bittorrent"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
