@@ -27,6 +27,17 @@ impl TryFrom<Type> for String {
     }
 }
 
+impl TryFrom<&Type> for String {
+    type Error = ConverterError;
+
+    fn try_from(value: &Type) -> Result<Self, Self::Error> {
+        match value {
+            Type::ByteString(s) => Ok(s.to_string()),
+            _ => Err(ConverterError::InvalidString),
+        }
+    }
+}
+
 impl TryFrom<Type> for i64 {
     type Error = ConverterError;
 
